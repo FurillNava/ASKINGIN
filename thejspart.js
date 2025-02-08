@@ -34,5 +34,23 @@ function handleYesClick(){
 }
 
 function secretbuttons(){
-    window.location.href = "asking.html"
+    window.location.href = "index.html"
 }
+
+function animateYesButtonStyle() {
+    const yesButton = document.querySelector('.yes-button');
+    const fontStyles = ['normal', 'italic', 'oblique', 'bold'];
+    const fontFamilies = ['Arial', 'Courier New', 'Georgia', 'Times New Roman', 'Verdana'];
+    let styleIndex = 0;
+    let familyIndex = 0;
+    setInterval(() => {
+        yesButton.style.fontStyle = fontStyles[styleIndex];
+        yesButton.style.fontFamily = fontFamilies[familyIndex];
+        styleIndex = (styleIndex + 1) % fontStyles.length;
+        familyIndex = (familyIndex + 1) % fontFamilies.length;
+    }, 100);
+}
+
+animateYesButtonStyle();
+
+
